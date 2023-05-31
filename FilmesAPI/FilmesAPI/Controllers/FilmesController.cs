@@ -22,21 +22,40 @@ namespace FilmesAPI.Controllers
 
         // GET api/<FilmesController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(int id)
         {
-            return "value";
+            Filme filme = MockFilmes.Filmes.FirstOrDefault(x => x.Id == id);
+            if(filme is null)
+            {
+                return NotFound();
+            }
+            return Ok(filme); 
         }
 
         // POST api/<FilmesController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post([FromBody] Filme filme)
         {
+            MockFilmes.Filmes.Add(filme);
+
+            return CreatedAtAction(nameof(Get), new { id = filme.Id }, filme);
         }
 
         // PUT api/<FilmesController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public IActionResult Put(int id, [FromBody] Filme filme)
         {
+            Filme filmeUpdate = MockFilmes.Filmes.FirstOrDefault(x => x.Id == id);
+
+            if(filmeUpdate is null) { return NotFound();  }
+
+            var index = MockFilmes.Filmes.IndexOf(filmeUpdate);
+
+            if(index != -1)
+            {
+                MockFilmes.Filmes[index] = filme;
+            }
+            return NoContent();
         }
 
         // DELETE api/<FilmesController>/5
