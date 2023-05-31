@@ -60,8 +60,15 @@ namespace FilmesAPI.Controllers
 
         // DELETE api/<FilmesController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            Filme filmeDelete = MockFilmes.Filmes.FirstOrDefault(x => x.Id == id);
+
+            if (filmeDelete is null) { return NotFound(); }
+
+            MockFilmes.Filmes.Remove(filmeDelete);
+
+            return NoContent();
         }
     }
 }
