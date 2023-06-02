@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "e474Uma8GRwsPJr522N6LRzXgk+JYMud0FxYjZAYxlk+KFsidinjhSwOEUU37rxW2QnILV/sJ2Q4cC/rbpfo+Q==",
+  "dgSpecHash": "Co1NIW1Cr22pxEZPqsP5A5jITg4mRfiwIHyAAekQVSkjlB/1zV78Nmus2ceQgvB1s4oUO8D97bVq+lu7wYOA/g==",
   "success": true,
   "projectFilePath": "C:\\Users\\alex\\Documents\\Dev\\DEVinHouse\\Modulo2\\semana9\\M02S09\\FilmesAPI\\FilmesAPI\\FilmesAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\alex\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.1.0\\microsoft.aspnetcore.mvc.versioning.5.1.0.nupkg.sha512",
+    "C:\\Users\\alex\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning.apiexplorer\\5.1.0\\microsoft.aspnetcore.mvc.versioning.apiexplorer.5.1.0.nupkg.sha512",
     "C:\\Users\\alex\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\alex\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\alex\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
