@@ -14,6 +14,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FilmesAPI.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace FilmesAPI
 {
@@ -58,6 +60,13 @@ namespace FilmesAPI
 
             services.ConfigureOptions<ConfigureSwaggerOptions>();
 
+
+            services.AddDbContext<FilmesContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("ServerConnection")));
+
+            services.AddControllers().AddNewtonsoftJson(options =>
+            options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
 
         }
 
