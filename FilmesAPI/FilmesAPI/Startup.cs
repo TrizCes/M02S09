@@ -77,7 +77,6 @@ namespace FilmesAPI
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwagger();
                 var descriptionProvider = app.ApplicationServices.GetRequiredService<IApiVersionDescriptionProvider>();
                 app.UseSwaggerUI(
                     options =>
