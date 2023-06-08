@@ -14,6 +14,9 @@ namespace FilmesAPI.Context
         public FilmesContext() { }
 
         public virtual DbSet<Filme> Filmes { get; set; }
+        public virtual DbSet<Diretor> Diretor { get; set; }
+        public virtual DbSet<FilmeDiretor> FilmeDiretor { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
