@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FilmesAPI.Context;
 using FilmesAPI.Models;
+using FilmesAPI.DTO;
+using AutoMapper;
 
 namespace FilmesAPI.Controllers
 {
@@ -25,7 +27,10 @@ namespace FilmesAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<FilmeDiretor>>> GetFilmeDiretor()
         {
-            return await _context.FilmeDiretor.ToListAsync();
+            return await _context.FilmeDiretor
+                .Include(x => x.Filme)
+                .Include(x => x.Diretor)
+                .ToListAsync();
         }
 
         // GET: api/FilmeDiretor/5
@@ -45,14 +50,14 @@ namespace FilmesAPI.Controllers
         // PUT: api/FilmeDiretor/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutFilmeDiretor(int id, FilmeDiretor filmeDiretor)
+        public async Task<IActionResult> PutFilmeDiretor(int id, FilmeDiretorDTO filmeDiretorDto)
         {
-            if (id != filmeDiretor.Id)
+            if (id != filmeDiretorDto.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(filmeDiretor).State = EntityState.Modified;
+            _context.Entry(filmeDiretorDto).State = EntityState.Modified;
 
             try
             {
@@ -76,8 +81,15 @@ namespace FilmesAPI.Controllers
         // POST: api/FilmeDiretor
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<FilmeDiretor>> PostFilmeDiretor(FilmeDiretor filmeDiretor)
+        public async Task<ActionResult<FilmeDiretor>> PostFilmeDiretor(FilmeDiretorDTO filmeDiretorDto)
         {
+            var configuration = new MapperConfiguration(
+                cfg => cfg.CreateMap<FilmeDiretorDTO, FilmeDiretor>());
+
+            var mapper = configuration.CreateMapper();
+
+            FilmeDiretor filmeDiretor = mapper.Map<FilmeDiretor>(filmeDiretorDto);
+
             _context.FilmeDiretor.Add(filmeDiretor);
             await _context.SaveChangesAsync();
 

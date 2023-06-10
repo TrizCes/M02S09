@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "feAOH+2tX3Rq5ToOqyahyKD+B7OG2baWxcHurcMC64KXuNyh93US5vlNJDEua+xug6qIiq378VZeLq6/CKgv8g==",
+  "dgSpecHash": "jIhEF5mtEWAc4XXIY5H/k5BTnga62H6YaYyBQ8Fn3XORLEiGHjdPXL0+2Oxu8rzdoKYySNiBnb/Xbm9B9pIdmQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\alex\\Documents\\Dev\\DEVinHouse\\Modulo2\\semana9\\M02S09\\FilmesAPI\\FilmesAPI\\FilmesAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\alex\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\alex\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\alex\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\alex\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.17\\microsoft.aspnetcore.jsonpatch.5.0.17.nupkg.sha512",
